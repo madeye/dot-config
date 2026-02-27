@@ -14,6 +14,10 @@ pub async fn detect_dotfiles() -> Result<Vec<DetectedDotfile>, ServerFnError> {
         (DotfileType::Gitconfig, "Git Config", "~/.gitconfig", home.join(".gitconfig")),
         (DotfileType::Tmux, "Tmux", "~/.tmux.conf", home.join(".tmux.conf")),
         (DotfileType::Ssh, "SSH Config", "~/.ssh/config", home.join(".ssh/config")),
+        (DotfileType::Editorconfig, "EditorConfig", "~/.editorconfig", home.join(".editorconfig")),
+        (DotfileType::Inputrc, "Readline", "~/.inputrc", home.join(".inputrc")),
+        (DotfileType::Npmrc, "npm Config", "~/.npmrc", home.join(".npmrc")),
+        (DotfileType::Wgetrc, "Wget Config", "~/.wgetrc", home.join(".wgetrc")),
     ];
 
     let mut results = Vec::new();

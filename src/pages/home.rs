@@ -27,6 +27,10 @@ pub fn HomePage() -> impl IntoView {
                                                 DotfileType::Gitconfig => "/gitconfig",
                                                 DotfileType::Tmux => "/tmux",
                                                 DotfileType::Ssh => "/ssh",
+                                                DotfileType::Editorconfig => "/editorconfig",
+                                                DotfileType::Inputrc => "/inputrc",
+                                                DotfileType::Npmrc => "/npmrc",
+                                                DotfileType::Wgetrc => "/wgetrc",
                                             };
                                             let status = if df.exists { "Found" } else { "Not found" };
                                             let status_class = if df.exists { "status-found" } else { "status-missing" };

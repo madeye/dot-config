@@ -1,7 +1,11 @@
 pub mod config_state;
+pub mod editorconfig;
 pub mod gitconfig;
+pub mod inputrc;
+pub mod npmrc;
 pub mod schema;
 pub mod shellrc;
 pub mod ssh;
 pub mod tmux;
 pub mod vimrc;
+pub mod wgetrc;

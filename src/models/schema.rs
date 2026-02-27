@@ -26,6 +26,10 @@ pub enum DotfileType {
     Gitconfig,
     Tmux,
     Ssh,
+    Editorconfig,
+    Inputrc,
+    Npmrc,
+    Wgetrc,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]

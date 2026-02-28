@@ -30,6 +30,7 @@ pub enum DotfileType {
     Inputrc,
     Npmrc,
     Wgetrc,
+    Emacs,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]

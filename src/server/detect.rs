@@ -18,6 +18,7 @@ pub async fn detect_dotfiles() -> Result<Vec<DetectedDotfile>, ServerFnError> {
         (DotfileType::Inputrc, "Readline", "~/.inputrc", home.join(".inputrc")),
         (DotfileType::Npmrc, "npm Config", "~/.npmrc", home.join(".npmrc")),
         (DotfileType::Wgetrc, "Wget Config", "~/.wgetrc", home.join(".wgetrc")),
+        (DotfileType::Emacs, "Emacs", "~/.emacs", home.join(".emacs")),
     ];
 
     let mut results = Vec::new();

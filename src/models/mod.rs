@@ -1,5 +1,6 @@
 pub mod config_state;
 pub mod editorconfig;
+pub mod emacs;
 pub mod gitconfig;
 pub mod inputrc;
 pub mod npmrc;

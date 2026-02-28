@@ -31,6 +31,7 @@ pub fn HomePage() -> impl IntoView {
                                                 DotfileType::Inputrc => "/inputrc",
                                                 DotfileType::Npmrc => "/npmrc",
                                                 DotfileType::Wgetrc => "/wgetrc",
+                                                DotfileType::Emacs => "/emacs",
                                             };
                                             let status = if df.exists { "Found" } else { "Not found" };
                                             let status_class = if df.exists { "status-found" } else { "status-missing" };

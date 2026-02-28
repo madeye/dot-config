@@ -1,4 +1,5 @@
 pub mod editorconfig;
+pub mod emacs;
 pub mod gitconfig;
 pub mod home;
 pub mod inputrc;

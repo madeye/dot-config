@@ -1,0 +1,145 @@
+use super::schema::{ConfigSchema, DotfileType, OptionDef, OptionKind};
+
+pub fn inputrc_schema() -> ConfigSchema {
+    ConfigSchema {
+        name: "Readline (inputrc)".into(),
+        dotfile_type: DotfileType::Inputrc,
+        default_path: "~/.inputrc".into(),
+        options: vec![
+            // Editing
+            OptionDef {
+                key: "editing-mode".into(),
+                label: "Editing Mode".into(),
+                help: "Emacs or Vi key bindings for command line editing".into(),
+                section: "Editing".into(),
+                kind: OptionKind::Dropdown(vec![
+                    ("emacs".into(), "Emacs (default)".into()),
+                    ("vi".into(), "Vi".into()),
+                ]),
+                default: "emacs".into(),
+            },
+            OptionDef {
+                key: "keymap".into(),
+                label: "Keymap".into(),
+                help: "Active keymap for key bindings".into(),
+                section: "Editing".into(),
+                kind: OptionKind::Dropdown(vec![
+                    ("emacs".into(), "Emacs".into()),
+                    ("vi".into(), "Vi Command".into()),
+                    ("vi-insert".into(), "Vi Insert".into()),
+                ]),
+                default: "emacs".into(),
+            },
+            OptionDef {
+                key: "bell-style".into(),
+                label: "Bell Style".into(),
+                help: "Controls what happens when readline encounters an ambiguous completion".into(),
+                section: "Editing".into(),
+                kind: OptionKind::Dropdown(vec![
+                    ("none".into(), "None (silent)".into()),
+                    ("visible".into(), "Visible (flash)".into()),
+                    ("audible".into(), "Audible (beep)".into()),
+                ]),
+                default: "none".into(),
+            },
+            // Completion
+            OptionDef {
+                key: "completion-ignore-case".into(),
+                label: "Ignore Case".into(),
+                help: "Case-insensitive tab completion".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "completion-map-case".into(),
+                label: "Map Case".into(),
+                help: "Treat hyphens and underscores as equivalent during completion".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "show-all-if-ambiguous".into(),
+                label: "Show All If Ambiguous".into(),
+                help: "Show all completions on first tab press instead of beeping".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "show-all-if-unmodified".into(),
+                label: "Show All If Unmodified".into(),
+                help: "Show completions if no partial completion can be made".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "menu-complete-display-prefix".into(),
+                label: "Menu Complete Display Prefix".into(),
+                help: "Display common prefix before cycling through completions".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "colored-completion-prefix".into(),
+                label: "Colored Completion Prefix".into(),
+                help: "Color the common prefix in completion results".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "colored-stats".into(),
+                label: "Colored Stats".into(),
+                help: "Color completions by file type (like ls --color)".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "visible-stats".into(),
+                label: "Visible Stats".into(),
+                help: "Append a character indicating file type (like ls -F)".into(),
+                section: "Completion".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            // History
+            OptionDef {
+                key: "history-size".into(),
+                label: "History Size".into(),
+                help: "Maximum number of history entries (0 = unlimited)".into(),
+                section: "History".into(),
+                kind: OptionKind::Number { min: 0, max: 10000, step: 100 },
+                default: "1000".into(),
+            },
+            OptionDef {
+                key: "revert-all-at-newline".into(),
+                label: "Revert All at Newline".into(),
+                help: "Undo all changes to history lines when a new line is accepted".into(),
+                section: "History".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "mark-symlinked-directories".into(),
+                label: "Mark Symlinked Dirs".into(),
+                help: "Append a slash to symlinked directories during completion".into(),
+                section: "Display".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+            OptionDef {
+                key: "skip-completed-text".into(),
+                label: "Skip Completed Text".into(),
+                help: "Do not duplicate text after the cursor when completing".into(),
+                section: "Display".into(),
+                kind: OptionKind::Toggle,
+                default: "true".into(),
+            },
+        ],
+    }
+}

@@ -11,6 +11,11 @@ use crate::pages::shellrc::ShellrcPage;
 use crate::pages::gitconfig::GitconfigPage;
 use crate::pages::tmux::TmuxPage;
 use crate::pages::ssh::SshPage;
+use crate::pages::editorconfig::EditorconfigPage;
+use crate::pages::inputrc::InputrcPage;
+use crate::pages::npmrc::NpmrcPage;
+use crate::pages::wgetrc::WgetrcPage;
+use crate::pages::emacs::EmacsPage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
@@ -48,6 +53,11 @@ pub fn App() -> impl IntoView {
                         <Route path=StaticSegment("gitconfig") view=GitconfigPage/>
                         <Route path=StaticSegment("tmux") view=TmuxPage/>
                         <Route path=StaticSegment("ssh") view=SshPage/>
+                        <Route path=StaticSegment("editorconfig") view=EditorconfigPage/>
+                        <Route path=StaticSegment("inputrc") view=InputrcPage/>
+                        <Route path=StaticSegment("npmrc") view=NpmrcPage/>
+                        <Route path=StaticSegment("wgetrc") view=WgetrcPage/>
+                        <Route path=StaticSegment("emacs") view=EmacsPage/>
                     </Routes>
                 </main>
             </div>
@@ -68,6 +78,11 @@ fn Sidebar() -> impl IntoView {
                 <li><A href="/gitconfig" attr:class="sidebar-link">"Git Config"</A></li>
                 <li><A href="/tmux" attr:class="sidebar-link">"Tmux"</A></li>
                 <li><A href="/ssh" attr:class="sidebar-link">"SSH Config"</A></li>
+                <li><A href="/editorconfig" attr:class="sidebar-link">"EditorConfig"</A></li>
+                <li><A href="/inputrc" attr:class="sidebar-link">"Readline (inputrc)"</A></li>
+                <li><A href="/npmrc" attr:class="sidebar-link">"npm Config"</A></li>
+                <li><A href="/wgetrc" attr:class="sidebar-link">"Wget Config"</A></li>
+                <li><A href="/emacs" attr:class="sidebar-link">"Emacs"</A></li>
             </ul>
         </nav>
     }

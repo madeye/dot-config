@@ -1,6 +1,11 @@
+pub mod editorconfig;
+pub mod emacs;
 pub mod gitconfig;
 pub mod home;
+pub mod inputrc;
+pub mod npmrc;
 pub mod shellrc;
 pub mod ssh;
 pub mod tmux;
 pub mod vimrc;
+pub mod wgetrc;
